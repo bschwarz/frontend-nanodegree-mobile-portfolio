@@ -1,5 +1,5 @@
 
-frontend-nanodegree-mobile-portfolio
+frontend-nanodegree-arcade-game
 ===============================
 
 Description
@@ -15,7 +15,7 @@ You can load the website in two ways:
 1. From this GitHub repo - Click [here](https://bschwarz.github.io/frontend-nanodegree-mobile-portfolio/) to open the website.
 2. Download repo locally - You can either download a zip file from the repo (Link from #1) or you can clone the repo onto your local machine. Once downloaded on your local machine, you can do one of two things to view:
 -- Open the *index.html* file that is in the root directory of the repo, with a browser (i.e. Chrome, Firefox).
--- Host the files through a local web server, and use your browser to navigate to the local web server. For example, if you have python installed, you can run this command in the root of the repo directory to serve the files:
+-- Host the files through a local web server, and use your browser to navigate to the local web server. For example, if you have python installed, you can run this command in the root of the repo directory to serve the files: 
 
       ```
       python -m SimpleHTTPServer 8080 # assuming port 8080 is not used
@@ -38,13 +38,14 @@ Part 1
 
 ### Page Speed Insights Results:
 
--   index.html  [results]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F)
-    - Mobile:  99
-    - Desktop: 90
 
--   pizza.html [results](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html) (this wasn't required, but I optimized CRP for pizza.html as well)
-    - Mobile:  89
-    - Desktop: 96
+| Page        | Mobile           | Desktop  |
+|------------- |:-------------:| -----:|
+|[index.html]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) <sup>1</sup>     | 99 | 90 |
+| [pizza.html](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)       | 89      |   96 |
+    
+<sup>1</sup>pizza wasn't required, but I optimized CRP for pizza.html as well
+
 
 Part 2
 --------
