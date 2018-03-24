@@ -1,5 +1,5 @@
 
-frontend-nanodegree-arcade-game
+frontend-nanodegree-mobile-portfolio
 ===============================
 
 Description
