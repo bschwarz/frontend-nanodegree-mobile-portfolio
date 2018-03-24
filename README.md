@@ -41,8 +41,8 @@ Part 1
 
 | Page        | Mobile           | Desktop  |
 |------------- |:-------------:| -----:|
-|[index.html]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) <sup>1</sup>     | 99 | 90 |
-| [pizza.html](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)       | 89      |   96 |
+|[index.html]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F)      | 99 | 90 |
+| [pizza.html](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)<sup>1</sup>       | 89      |   96 |
     
 <sup>1</sup>pizza wasn't required, but I optimized CRP for pizza.html as well
 
