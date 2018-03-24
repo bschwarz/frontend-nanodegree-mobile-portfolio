@@ -39,11 +39,11 @@ Part 1
 ### Page Speed Insights Results:
 
 -   index.html  [results]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F)
-    - Mobile: 99
-    - Desktop: [90](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F&tab=desktop)
+    - Mobile:  99
+    - Desktop: 90
 
 -   pizza.html [results](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html) (this wasn't required, but I optimized CRP for pizza.html as well)
-    - Mobile: 89
+    - Mobile:  89
     - Desktop: 96
 
 Part 2
