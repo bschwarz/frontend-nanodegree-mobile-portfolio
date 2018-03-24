@@ -1,55 +1,56 @@
-## Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+frontend-nanodegree-arcade-game
+===============================
 
-To get started, check out the repository and inspect the code.
+Description
+-----------
 
-### Getting started
+This is a project from the Udacity Front-End Web Developer nanodegree.  This project focused on optimizing an existing web site. The overall goals were two-fold:
+1. Optimize PageSpeed Insights score for index.html - this involves making improvements with the Critical Rendering Path (CRP).
+2. Optimize Frames Per Second in pizza.html - this involves stabilizing the Frames Per Second (FPS) to 60 fps in pizza.html, as well as improving the time to scroll the pizzas to below 5ms.
 
-#### Part 1: Optimize PageSpeed Insights score for index.html
+How to Load the website
+-----------------------
+You can load the website in two ways:
+1. From this GitHub repo - Click [here](https://bschwarz.github.io/frontend-nanodegree-mobile-portfolio/) to open the website.
+2. Download repo locally - You can either download a zip file from the repo (Link from #1) or you can clone the repo onto your local machine. Once downloaded on your local machine, you can do one of two things to view:
+-- Open the *index.html* file that is in the root directory of the repo, with a browser (i.e. Chrome, Firefox).
+-- Host the files through a local web server, and use your browser to navigate to the local web server. For example, if you have python installed, you can run this command in the root of the repo directory to serve the files:
 
-Some useful tips to help you get started:
+      ```
+      python -m SimpleHTTPServer 8080 # assuming port 8080 is not used
+      ```
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+   Then you can navigate your browser to *localhost:8080*
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
+Part 1
+-------------
+### Optimizations
+-   Minified CSS with ```csso``` to reduce file size
+-   Minified JS with ```uglify-js``` to reduce file size
+-   Inlined css to avoid another round trip
+-   Added ```async``` to *analytics.js* to stop blocking
+-   Moved javascript to end of body to stop blocking
+-   Reduced size of all images using ```convert``` on the command line to reduce file size
+-   removed Google web fonts
+-   Added ```media=“print”``` to *print.css* link
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
+### Page Speed Insights Results:
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+-   index.html  [results]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F)
+    – Mobile: 99
+    – Desktop: [90](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F&tab=desktop)
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+-   pizza.html [results](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html) (this wasn't required, but I optimized CRP for pizza.html as well)
+    – Mobile: 89
+    – Desktop: 96
 
-#### Part 2: Optimize Frames per Second in pizza.html
+Part 2
+--------
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+License
+-------
+This project is licensed under the terms of the MIT license. (See LICENSE.md)
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+Copyright (c) 2018 Brett Schwarz
