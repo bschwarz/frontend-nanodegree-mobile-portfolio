@@ -1,5 +1,5 @@
 
-frontend-nanodegree-arcade-game
+frontend-nanodegree-mobile-portfolio
 ===============================
 -----------
 ## Description
@@ -38,13 +38,13 @@ You can load the website in two ways:
 
 ### Page Speed Insights Results:
 
-[index.html analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
+[index.html Page Speed Insight analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
 <br/>
-[pizza.html analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
+[pizza.html Page Speed Insight analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
     
 
 <table>
-	 <caption>Optimization Summary</caption>
+	 <caption align="center"><b>Optimization Summary<b></caption>
   <tr>
     <th>Page</th>
     <th colspan="3">Mobile</th>
@@ -89,10 +89,14 @@ You can load the website in two ways:
 ## Resources
 + [CSSO](https://github.com/css/csso-cli) - tool to minimize the CSS files
 + [uglify-js](https://github.com/mishoo/UglifyJS2) - tool to minimize the Javascript files
++ [Google Page Speed Insights](https://developers.google.com/speed/pagespeed/insights/) - tool to measure web page performance
++ [convert](https://www.imagemagick.org/script/convert.php) - CLI tool to resize and optimize images
++ [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
++ [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/)
 
 
 -------
-License
+## License
 
 This project is licensed under the terms of the MIT license. (See LICENSE.md)
 
