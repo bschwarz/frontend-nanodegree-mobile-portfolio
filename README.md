@@ -38,8 +38,13 @@ You can load the website in two ways:
 
 ### Page Speed Insights Results:
 
+[index.html analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
+<br/>
+[pizza.html analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
+    
 
 <table>
+	 <caption>Optimization Summary</caption>
   <tr>
     <th>Page</th>
     <th colspan="3">Mobile</th>
@@ -75,10 +80,6 @@ You can load the website in two ways:
 </table>
 <sup>1</sup>pizza wasn't required, but I optimized CRP for pizza.html as well
 
-[index.html analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
-<br/>
-[pizza.html analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
-    
 
 
 --------
@@ -86,8 +87,8 @@ You can load the website in two ways:
 
 -------
 ## Resources
-[CSSO](https://github.com/css/csso-cli) - tool to minimize the CSS files
-[uglify-js](https://github.com/mishoo/UglifyJS2) - tool to minimize the Javascript files
++ [CSSO](https://github.com/css/csso-cli) - tool to minimize the CSS files
++ [uglify-js](https://github.com/mishoo/UglifyJS2) - tool to minimize the Javascript files
 
 
 -------
