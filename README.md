@@ -73,11 +73,13 @@ You can load the website in two ways:
     <td>220%</td>
   </tr>
 </table>
+<sup>1</sup>pizza wasn't required, but I optimized CRP for pizza.html as well
 
-[index.html analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F)
+[index.html analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
+<br/>
 [pizza.html analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
     
-<sup>1</sup>pizza wasn't required, but I optimized CRP for pizza.html as well
+
 
 --------
 ## Part 2
