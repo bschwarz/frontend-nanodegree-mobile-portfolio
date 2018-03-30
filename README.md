@@ -5,15 +5,15 @@ frontend-nanodegree-mobile-portfolio
 ## Description
 
 This is a project from the Udacity Front-End Web Developer nanodegree.  This project focused on optimizing an existing web site. The overall goals were two-fold:
-1. Optimize PageSpeed Insights score for index.html - this involves making improvements with the Critical Rendering Path (CRP).
-2. Optimize Frames Per Second in pizza.html - this involves stabilizing the Frames Per Second (FPS) to 60 fps in pizza.html, as well as improving the time to scroll the pizzas to below 5ms.
+1. Optimize PageSpeed Insights score for index.html - this involves making improvements with the Critical Rendering Path (CRP). Needs to be a PageSpeed score above 90.
+2. Optimize Frames Per Second in pizza.html - this involves stabilizing the Frames Per Second (FPS) to 60 fps in pizza.html while scrolling, as well as improving the time to re-size the pizzas to below 5ms. Comments in views/js/main.js are present and effectively explain longer code procedures. 
 
 -----------
 ## How to Load the website
 
 You can load the website in two ways:
 1. From this GitHub pages - open the [website](https://bschwarz.github.io/frontend-nanodegree-mobile-portfolio/).
-2. Download [repo](https://github.com/bschwarz/frontend-nanodegree-mobile-portfolio) locally - You can either download a zip file from the repo or you can clone the repo onto your local machine. Once downloaded on your local machine, you can do one of two things to view:
+2. Download the [repo](https://github.com/bschwarz/frontend-nanodegree-mobile-portfolio) locally - You can either download a zip file from the repo or you can clone the repo onto your local machine. Once downloaded on your local machine, you can do one of two things to view:
 -- Open the *index.html* file that is in the root directory of the repo, with a browser (i.e. Chrome, Firefox).
 -- Host the files through a local web server, and use your browser to navigate to the local web server. For example, if you have python installed, you can run this command in the root of the repo directory to serve the files: 
 
