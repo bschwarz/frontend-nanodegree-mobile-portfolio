@@ -4,10 +4,13 @@
   "description": "Udacity portfolio project for Front End nanodegree",
   "main": "gulpfile.js",
   "dependencies": {
-    "csso": "^3.5.0"
+    "csso": "^3.5.0",
+    "gulp-htmlmin": "^4.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-inline-css": "^3.3.0",
     "gulp-rename": "^1.2.2"
   },
   "scripts": {
