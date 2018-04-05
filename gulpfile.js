@@ -24,7 +24,7 @@ gulp.task('js', function() {
 // });
 
 gulp.task('img', function() {
-  return gulp.src(['**/img/*.png', '**/img/*.jpg', '**/img/*.gif'])
+  return gulp.src(['**/images/*.png', '**/images/*.jpg', '**/images/*.gif'])
     .pipe(gulp.dest(DEST));
 });
 
