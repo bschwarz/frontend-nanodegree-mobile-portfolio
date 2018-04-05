@@ -12,7 +12,7 @@ var htmlmin = require('gulp-htmlmin');
 // To move and minify JS assests.
 var DEST = 'dist/';
 gulp.task('js', function() {
-  return gulp.src(['**/js/*.js'])
+  return gulp.src(['**/js/*.js', '!node_modules/', '!node_modules/**'])
     .pipe(uglify())
     .pipe(gulp.dest(DEST));
 });
