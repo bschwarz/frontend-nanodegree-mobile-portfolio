@@ -27,9 +27,9 @@ You can load the website in two ways:
 ## Part 1
 
 ### Optimizations
--   Minified CSS with ```csso``` to reduce file size
+-   Minified CSS with ```htmlmin``` to reduce file size
 -   Minified JS with ```uglify-js``` to reduce file size
--   Inlined css to avoid another round trip
+-   Inlined css to avoid another round trip with ```inline-css```
 -   Added ```async``` to *analytics.js* to stop blocking
 -   Moved javascript to end of body to stop blocking
 -   Reduced size of all images using ```convert``` on the command line to reduce file size
@@ -87,7 +87,7 @@ You can load the website in two ways:
 
 -------
 ## Resources
-+ [CSSO](https://github.com/css/csso-cli) - tool to minimize the CSS files
++ [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin) - tool to minimize the HTML and CSS
 + [uglify-js](https://github.com/mishoo/UglifyJS2) - tool to minimize the Javascript files
 + [Google Page Speed Insights](https://developers.google.com/speed/pagespeed/insights/) - tool to measure web page performance
 + [convert](https://www.imagemagick.org/script/convert.php) - CLI tool to resize and optimize images
