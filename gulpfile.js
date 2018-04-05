@@ -2,14 +2,18 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var inlinecss = require('gulp-inline-css');
 var htmlmin = require('gulp-htmlmin');
+var jshint = require('gulp-jshint');
 
 // Note: the '**/' is needed as a prefix to
 // preserve the directory structure.
+
 
 // To move and minify JS assests.
 var DEST = 'dist/';
 gulp.task('js', function() {
   return gulp.src(['**/js/*.js', '!node_modules/', '!node_modules/**'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe(uglify())
     .pipe(gulp.dest(DEST));
 });
