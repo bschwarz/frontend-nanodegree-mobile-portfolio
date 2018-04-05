@@ -1,8 +1,5 @@
 var gulp = require('gulp');
-// var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-// var csso = require('gulp-csso');
-// var cleancss = require('gulp-clean-css');
 var inlinecss = require('gulp-inline-css');
 var htmlmin = require('gulp-htmlmin');
 
@@ -16,12 +13,6 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(gulp.dest(DEST));
 });
-
-// gulp.task('css', function() {
-//   return gulp.src(['**/css/*.css'])
-//     .pipe(cleancss())
-//     .pipe(gulp.dest(DEST));
-// });
 
 gulp.task('img', function() {
   return gulp.src(['**/images/*.png', '**/images/*.jpg', '**/images/*.gif', '!node_modules/', '!node_modules/**'])
