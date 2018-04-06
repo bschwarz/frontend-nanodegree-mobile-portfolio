@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
-var inlinecss = require('gulp-inline-css');
 var htmlmin = require('gulp-htmlmin');
 var jshint = require('gulp-jshint');
+var inlinesrc = require('gulp-inline-source');
+var csslint = require('gulp-csslint');
 
 // Note: the '**/' is needed as a prefix to
 // preserve the directory structure.
@@ -11,7 +12,7 @@ var jshint = require('gulp-jshint');
 // To move and minify JS assests.
 var DEST = 'dist/';
 gulp.task('js', function() {
-  return gulp.src(['**/js/*.js', '!node_modules/', '!node_modules/**'])
+  return gulp.src(['**/js/*.js', '!node_modules/', '!node_modules/**', '!dist/', '!dist/**'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(uglify())
@@ -19,15 +20,22 @@ gulp.task('js', function() {
 });
 
 gulp.task('img', function() {
-  return gulp.src(['**/images/*.png', '**/images/*.jpg', '**/images/*.gif', '!node_modules/', '!node_modules/**'])
+  return gulp.src(['**/images/*.png', '**/images/*.jpg', '**/images/*.gif', '!node_modules/', '!node_modules/**', '!dist/', '!dist/**'])
     .pipe(gulp.dest(DEST));
 });
 
-gulp.task('html', function() {
+// just to run csslint, since CSS gets inlined in HTML
+gulp.task('css', function() {
+  return gulp.src(['**/css/*.css', '!node_modules/', '!node_modules/**', '!dist/', '!dist/**'])
+    .pipe(csslint())
+    .pipe(csslint.formatter());
+});
+
+gulp.task('html', ['css'], function() {
   // return gulp.src(['**/*.html', '!node_modules/', '!node_modules/**'])
   return gulp.src(['index.html', 'project-*.html', '**/views/pizza.html'])
-    .pipe(inlinecss())
-    .pipe(htmlmin({collapseWhitespace: true,minifyJS:true,minifyCSS:true,removeComments:true}))
+    .pipe(inlinesrc())
+    .pipe(htmlmin({collapseWhitespace: true,minifyJS:true,minifyCSS:false,removeComments:true}))
     .pipe(gulp.dest(DEST));
 });
 
