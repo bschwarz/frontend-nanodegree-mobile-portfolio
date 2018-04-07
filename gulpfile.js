@@ -24,15 +24,20 @@ gulp.task('img', function() {
     .pipe(gulp.dest(DEST));
 });
 
-// just to run csslint, since CSS gets inlined in HTML
-gulp.task('css', function() {
+// just to run csslint, since CSS gets inlined in HTML, and copy over bootstrap
+gulp.task('csslint', function() {
   return gulp.src(['**/css/*.css', '!node_modules/', '!node_modules/**', '!dist/', '!dist/**'])
     .pipe(csslint())
     .pipe(csslint.formatter());
 });
 
+// just to run csslint, since CSS gets inlined in HTML, and copy over bootstrap
+gulp.task('css', ['csslint'], function() {
+  return gulp.src(['**/css/boot*.css', '!node_modules/', '!node_modules/**', '!dist/', '!dist/**'])
+    .pipe(gulp.dest(DEST));
+});
+
 gulp.task('html', ['css'], function() {
-  // return gulp.src(['**/*.html', '!node_modules/', '!node_modules/**'])
   return gulp.src(['index.html', 'project-*.html', '**/views/pizza.html'])
     .pipe(inlinesrc())
     .pipe(htmlmin({collapseWhitespace: true,minifyJS:true,minifyCSS:false,removeComments:true}))
