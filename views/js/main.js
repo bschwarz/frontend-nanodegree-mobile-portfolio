@@ -448,11 +448,16 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+  // Modified this function to take the calculations out of the loop, since
+  // the newwidth is the same for each element. This decreased the time it takes
+  // to change pizza size significantly
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    var pizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+    var dx = determineDx(pizzaContainers[0], size);
+    var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+
+    for (var i = 0; i < pizzaContainers.length; i++) {
+      pizzaContainers[i].style.width = newwidth;
     }
   }
 
@@ -501,6 +506,11 @@ function updatePositions() {
 
   // avoid updating if not scrolling
   // from: https://gist.github.com/Warry/4254579
+  //
+  // Since when scrolling this function gets called, it should be
+  // optimized to get the FPS high and even. Did 2 things:
+  //   moved scrollTop out of loop
+  //   used requestAnimationFrame
   if (lastPosition == window.pageYOffset) {
     window.requestAnimationFrame(updatePositions);
     return false;
