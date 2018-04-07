@@ -85,14 +85,66 @@ You can load the website in two ways:
 --------
 ## Part 2
 
+### Optimizations
+- Based on dev tools, saw that changePizzaSizes was taking a long time to resize all pizzas. The problem was that the size of each element was being calculated for each loop iteration, when the size is the same for all pizzas. So, took calculation out of loop, and the time to resize got reduced significantly.
+
+	**Old Timing**
+	```
+	Time to resize pizzas: 108.80000004544854ms  main.js:465 
+	Time to resize pizzas: 110.7999999076128ms   main.js:465 
+	Time to resize pizzas: 82.00000005215406ms   main.js:465
+	```
+
+	**New Timing**
+	```
+	Time to resize pizzas: 2.800000016577542ms   main.js:470 
+	Time to resize pizzas: 2.300000051036477ms   main.js:470
+    Time to resize pizzas: 2.3999999975785613ms  main.js:470
+    ```
+
+- Based on dev tools, saw that the FPS were low. Since the scroll event triggered the function updatePositions, modified that function to perform better. 
+	1. First took the scrollTop calculation out of loop, since only need once
+	2. implemented requestAnimationFrame based on course discussion about allowing for smoother FPS
+
+	The FPS went up from around ~20 FPS to about ~60 FPS
+
+-------
+## Build Automation
+Used Gulp to automate the building and common tasks of the website. Includes the following:
+- minification of javascript using ```uglify```
+- minification of HTML and CSS using ```htmlmin```
+- inlining CSS using ```inline source```
+- Javascript linting using ```jshint```
+- CSS linting using ```csslint```
+- moves all assets under the ```dist/``` directory
+
+Gulp dependencies are in the ```package.json``` file
+To generate distribution, run the following in the root directory of the repo
+
+Install Dependencies
+```
+npm install
+```
+
+Generate Distribution
+```
+gulp main
+```
+You can run individual tasks by replacing ```main``` with either ```html```, ```css```,```js``` or ```img```
+The resulting files for distribution will be in the ```dist/``` directoy
+
 -------
 ## Resources
-+ [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin) - tool to minimize the HTML and CSS
-+ [uglify-js](https://github.com/mishoo/UglifyJS2) - tool to minimize the Javascript files
 + [Google Page Speed Insights](https://developers.google.com/speed/pagespeed/insights/) - tool to measure web page performance
 + [convert](https://www.imagemagick.org/script/convert.php) - CLI tool to resize and optimize images
 + [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks)
 + [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/)
++ [gulp](https://gulpjs.com/) - build/task tool to automate common tasks (i.e. minifications, inlining)
++ [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin) - tool to minimize the HTML and CSS
++ [gulp-uglify](https://www.npmjs.com/package/gulp-uglify) - tool to minimize the Javascript files
++ [gulp-inline-source](https://www.npmjs.com/package/gulp-inline-source) - Tools to inline CSS into the HTML page from gulp
++ [gulp-csslint](https://www.npmjs.com/package/gulp-csslint) - tool to check syntax of CSS from Gulp
++ [gulp-jshint](https://www.npmjs.com/package/gulp-jshint) - tool to check syntax of javascript files from Gulp
 
 
 -------
