@@ -521,12 +521,19 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementsByClassName('mover');
+  // Calculate the phases ahead of time, since there will only be a unique
+  // phase from 0 to 4, so don't need to calculate for every item
+  var phases = [];
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  for (var i = 0; i < 5; i++) {
+    phases.push(Math.sin((scrollTop / 1250) + i) * 100);
+  }
+
+  var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
-    var phase = Math.sin((scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    // var phase = Math.sin((scrollTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + phases[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
