@@ -498,6 +498,16 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
+
+  // avoid updating if not scrolling
+  // from: https://gist.github.com/Warry/4254579
+  if (lastPosition == window.pageYOffset) {
+    window.requestAnimationFrame(updatePositions);
+    return false;
+  } else {
+    lastPosition = window.pageYOffset;
+  }
+
   frame++;
   window.performance.mark("mark_start_frame");
 
@@ -517,12 +527,16 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+
+  window.requestAnimationFrame(updatePositions);
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+// window.addEventListener('scroll', updatePositions);
+window.requestAnimationFrame(updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+var lastPosition = -1;
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
