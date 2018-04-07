@@ -532,7 +532,6 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
-    // var phase = Math.sin((scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + phases[i%5] + 'px';
   }
 
@@ -552,12 +551,17 @@ function updatePositions() {
 // window.addEventListener('scroll', updatePositions);
 window.requestAnimationFrame(updatePositions);
 
+
 // Generates the sliding pizzas when the page loads.
 var lastPosition = -1;
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
+  //Calculate number of pizzas needed based on viewport
+  var innerHeight = window.innerHeight;
+  // height of each pizza is 100, so use that as rough gauge for rows
+  var numPizzas = innerHeight/100 * cols;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < numPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
