@@ -5,23 +5,23 @@ frontend-nanodegree-mobile-portfolio
 ## Description
 
 This is a project from the Udacity Front-End Web Developer nanodegree.  This project focused on optimizing an existing web site. The overall goals were two-fold:
-1. Optimize PageSpeed Insights score for index.html - this involves making improvements with the Critical Rendering Path (CRP). Needs to be a PageSpeed score above 90.
+1. Optimize PageSpeed Insights score for index.html - this involves making improvements to the Critical Rendering Path (CRP). Needs to be a PageSpeed score above 90.
 2. Optimize Frames Per Second in pizza.html - this involves stabilizing the Frames Per Second (FPS) to 60 fps in pizza.html while scrolling, as well as improving the time to re-size the pizzas to below 5ms. Comments in views/js/main.js are present and effectively explain longer code procedures. 
 
 -----------
 ## How to Load the website
 
 You can load the website in two ways:
-1. From this GitHub pages - open the [website](https://bschwarz.github.io/frontend-nanodegree-mobile-portfolio/).
-2. Download the [repo](https://github.com/bschwarz/frontend-nanodegree-mobile-portfolio) locally - You can either download a zip file from the repo or you can clone the repo onto your local machine. Once downloaded on your local machine, you can do one of two things to view:
--- Open the *index.html* file that is in the root directory of the repo, with a browser (i.e. Chrome, Firefox).
+1. From this GitHub pages - open the [website](https://bschwarz.github.io/frontend-nanodegree-mobile-portfolio/dist/).
+2. Download the [repo](https://github.com/bschwarz/frontend-nanodegree-mobile-portfolio) locally - You can either download a zip file from the repo or you can clone the repo onto your local machine. Once downloaded onto your local machine, you can do one of two things to view:
+-- Open the *dist/index.html* file that is in the root directory of the repo, with a browser (i.e. Chrome, Firefox).
 -- Host the files through a local web server, and use your browser to navigate to the local web server. For example, if you have python installed, you can run this command in the root of the repo directory to serve the files: 
 
       ```
       python -m SimpleHTTPServer 8080 # assuming port 8080 is not used already.
       ```
 
-   Then you can navigate your browser to *localhost:8080*
+   Then you can navigate your browser to *localhost:8080/dist/*
 
 -------------
 ## Part 1
@@ -29,7 +29,8 @@ You can load the website in two ways:
 ### Optimizations
 -   Minified CSS with ```htmlmin``` to reduce file size
 -   Minified JS with ```uglify-js``` to reduce file size
--   Inlined css to avoid another round trip with ```inline-css```
+-   Inlined CSS to avoid another round trip with ```inline-source```
+- 	Inlined JS to avoid another round trip with ```inline-source```
 -   Added ```async``` to *analytics.js* to stop blocking
 -   Moved javascript to end of body to stop blocking
 -   Reduced size of all images using ```convert``` on the command line to reduce file size
@@ -38,9 +39,9 @@ You can load the website in two ways:
 
 ### Page Speed Insights Results:
 
-[index.html Page Speed Insight analysis]( https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F) 
+[index.html Page Speed Insight analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fdist%2F) 
 <br/>
-[pizza.html Page Speed Insight analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fviews%2Fpizza.html)
+[pizza.html Page Speed Insight analysis](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fbschwarz.github.io%2Ffrontend-nanodegree-mobile-portfolio%2Fdist%2Fviews%2Fpizza.html)
     
 
 <table>
@@ -86,7 +87,7 @@ You can load the website in two ways:
 ## Part 2
 
 ### Optimizations
-- Based on dev tools, saw that changePizzaSizes was taking a long time to resize all pizzas. The problem was that the size of each element was being calculated for each loop iteration, when the size is the same for all pizzas. So, took calculation out of loop, and the time to resize got reduced significantly.
+- Based on dev tools, saw that ```changePizzaSizes``` was taking a long time to resize all pizzas. The problem was that the size of each element was being calculated for each loop iteration, when the size is the same for all pizzas. So, I took the calculation out of the loop, and the time to resize got reduced significantly.
 
 	**Old Timing**
 	```
@@ -103,8 +104,8 @@ You can load the website in two ways:
     ```
 
 - Based on dev tools, saw that the FPS were low. Since the scroll event triggered the function updatePositions, modified that function to perform better. 
-	1. First took the scrollTop calculation out of loop, since only need once
-	2. implemented requestAnimationFrame based on course discussion about allowing for smoother FPS
+	1. First took the ```scrollTop``` calculation out of the loop, since only need once
+	2. implemented ```requestAnimationFrame``` based on course discussion about allowing for smoother FPS
 
 	The FPS went up from around ~20 FPS to about ~60 FPS
 
@@ -119,6 +120,9 @@ Used Gulp to automate the building and common tasks of the website. Includes the
 - moves all assets under the ```dist/``` directory
 
 Gulp dependencies are in the ```package.json``` file
+
+You need to install [nodejs/npm](https://www.npmjs.com/get-npm) and [gulp](https://gulpjs.com/) first.
+
 To generate distribution, run the following in the root directory of the repo
 
 Install Dependencies
@@ -131,7 +135,7 @@ Generate Distribution
 gulp main
 ```
 You can run individual tasks by replacing ```main``` with either ```html```, ```css```,```js``` or ```img```
-The resulting files for distribution will be in the ```dist/``` directoy
+The resulting files for distribution will be in the ```dist/``` directory
 
 -------
 ## Resources
