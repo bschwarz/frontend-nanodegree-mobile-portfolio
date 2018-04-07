@@ -38,7 +38,7 @@ gulp.task('css', ['csslint'], function() {
 });
 
 gulp.task('html', ['css'], function() {
-  return gulp.src(['index.html', 'project-*.html', '**/views/pizza.html'])
+  return gulp.src(['index.html', 'project-*.html', '**/views/pizza.html', '!dist/', '!dist/**'])
     .pipe(inlinesrc())
     .pipe(htmlmin({collapseWhitespace: true,minifyJS:true,minifyCSS:false,removeComments:true}))
     .pipe(gulp.dest(DEST));
